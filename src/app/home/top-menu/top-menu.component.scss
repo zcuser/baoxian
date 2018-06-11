@@ -1,0 +1,45 @@
+.dropdown-menu{
+    padding:0px;
+    min-width: 120px;
+    li{
+        a{
+            padding: 10px 20px;
+            color: #333;
+        }
+    }
+}
+.navbar-inverse{
+  background-color: #23A455;
+  border-color: #23A455;
+}
+.navbar-header .logo{
+  width: 40px;
+  height: 40px;
+  margin-top: 5px;
+  vertical-align: bottom;
+}
+.navbar-header .logotitle{
+  display: inline-block;
+  font-size: 22px;
+  color: #eee;
+  border-left: 1px solid #eee;
+  padding-left: 20px;
+  padding-bottom: 4px;
+}
+.navbar .navbar-nav > li > a:hover{
+  background-color: #23A455;
+}
+.dropdown .user{
+  border-right: 1px solid #eee;
+}
+.dropdown .adminuser:hover{
+   cursor: default;
+}
+.dropdown .logoutbtn{
+  width: 18px;
+  vertical-align: text-bottom;
+  height: 50px;
+}
+.dropdown .logoutbtn:hover{
+  cursor: pointer;
+}

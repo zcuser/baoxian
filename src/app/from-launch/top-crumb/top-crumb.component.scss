@@ -1,0 +1,32 @@
+.top-menu-container{
+  border-bottom: 1px solid #CACACA;
+  position: fixed;
+    background: #fff;
+    padding-top: 10px;
+    top: 53px;
+    z-index: 999;
+    width: 100%;
+}
+.menu-title{
+  display: inline-block;
+  vertical-align: -webkit-baseline-middle;
+}
+.menu-li{
+  display: inline-block;
+  margin-left: 50px;
+  vertical-align: text-top;
+  margin-top: -5px;
+  margin-bottom: 0px;
+  width: 40%;
+}
+body .ui-state-active{
+  background-color: #fff;
+    color: #000;
+}
+body .ui-tabmenu .ui-tabmenu-nav .ui-tabmenuitem.ui-state-active .ui-menuitem-link{
+  background-color: #fff;
+  color: #000;
+}
+.ui-inputgroup-addon{
+  margin-right: 0px;
+}

@@ -1,0 +1,121 @@
+<div class="panel-from">
+  <p-panel [header]="title" [toggleable]="true" [collapsed]="true">
+      <div class="split-btn">
+          <p-radioButton [name]="radioname" label="以職位角色設定" value="val1" [(ngModel)]="selectedValue"></p-radioButton>
+          <p-radioButton [name]="radioname" label="以特定員工設定" value="val2" [(ngModel)]="selectedValue"></p-radioButton>
+      </div>
+      <div *ngIf="selectedValue === 'val1'" class="ui-g ui-fluid">
+          <div class="ui-g-12 ui-md-12">
+            <div class="tab-card-title">處理人員設定</div>
+          </div>
+      <div class="ui-g-12 ui-md-12">
+          <div class="ui-inputgroup">
+            <div class="ui-inputgroup-left">
+              <span class="required">職位角色</span>
+            </div>
+              <p-dropdown [options]="roles" [style]="{'width':'200px', 'border': 'none','border-bottom': '1px solid #d2d2d2'}" placeholder="" [(ngModel)]="role"></p-dropdown>
+          </div>
+      </div>
+      <div class="ui-g-12 ui-md-12">
+          <div class="ui-inputgroup">
+              <div class="ui-inputgroup-left">
+              <span>單位名稱</span>
+            </div>
+              <p-dropdown [options]="Companys" [style]="{'width':'200px', 'border': 'none','border-bottom': '1px solid #d2d2d2'}" placeholder="" [(ngModel)]="Company"></p-dropdown>
+            </div>
+      </div>
+      <div class="ui-g-12 ui-md-12">
+          <div class="ui-inputgroup">
+              <div class="ui-inputgroup-left">
+              <span>員工姓名</span>
+              </div>
+              <p-dropdown [options]="names" [style]="{'width':'200px', 'border': 'none','border-bottom': '1px solid #d2d2d2'}" placeholder="" [(ngModel)]="name"></p-dropdown>
+          </div>
+      </div>
+
+    </div>
+
+    <div *ngIf="selectedValue === 'val2'" class="ui-g ui-fluid">
+        <div class="ui-g-12 ui-md-12">
+            <div class="tab-card-title">處理人員設定</div>
+          </div>
+      <div class="ui-g-12 ui-md-12">
+          <p-table [value]="namelist">
+              <ng-template pTemplate="header">
+                  <tr>
+                      <th>單位名稱</th>
+                      <th>成員名單(請至少選著一位承辦初核人,同單位僅可有一位)</th>
+                      <th>操作</th>
+                  </tr>
+              </ng-template>
+              <ng-template pTemplate="body" let-name>
+                  <tr>
+                      <td pEditableColumn>
+                          <p-cellEditor>
+                              <ng-template pTemplate="input">
+                                  <input style="width: 30%;margin:0 auto" class="form-control input-border" type="text" [(ngModel)]="name.Company">
+                              </ng-template>
+                              <ng-template pTemplate="output">
+                                  {{name.Company}}
+                              </ng-template>
+                          </p-cellEditor>
+                      </td>
+                      <td pEditableColumn>
+                          <p-cellEditor>
+                              <ng-template pTemplate="input">
+                                  <input style="width: 30%;margin:0 auto" class="form-control input-border" type="text" [(ngModel)]="name.name">
+                              </ng-template>
+                              <ng-template pTemplate="output">
+                                  {{name.name}}
+                              </ng-template>
+                          </p-cellEditor>
+                      </td>
+                      <td>
+                        <img (click)="delete(name)" class="point" src="../../../assets/imgs/closed.svg">
+                      </td>
+                  </tr>
+              </ng-template>
+          </p-table>
+      </div>
+      <div class="ui-g-12 ui-md-5">
+          <div class="ui-inputgroup">
+              <span class="ui-inputgroup-addon">單位名稱</span>
+              <p-dropdown [options]="Companys" [style]="{'width':'300px', 'border': 'none','border-bottom': '1px solid #d2d2d2'}" placeholder="" [(ngModel)]="Company"></p-dropdown>
+          </div>
+      </div>
+      <div class="ui-g-12 ui-md-5">
+          <div class="ui-inputgroup">
+              <span class="ui-inputgroup-addon">成員名單</span>
+              <p-dropdown [options]="names" [style]="{'width':'300px', 'border': 'none','border-bottom': '1px solid #d2d2d2'}" placeholder="" [(ngModel)]="name"></p-dropdown>
+          </div>
+      </div>
+      <div class="ui-g-12 ui-md-2">
+        <div class="ui-inputgroup">
+            <button (click)="addname()" pButton type="button" label="添加初審人" ></button>
+        </div>
+    </div>
+    </div>
+    <div class="ui-g ui-fluid">
+        <div class="ui-g-12 ui-md-12">
+            <div class="tab-card-title">處理時間設定</div>
+          </div>
+
+        <div class="ui-g-12 ui-md-12">
+            <div class="ui-inputgroup">
+                <div class="ui-inputgroup-left">
+                <span class="required">作業截止時間</span>
+                </div>
+                <input name="time1" min="0"  type="number" style="width:20%" class="input-border">小時
+            </div>
+        </div>
+        <div class="ui-g-12 ui-md-12">
+            <div class="ui-inputgroup">
+                <div class="ui-inputgroup-left">
+                <span class="required">作業提醒時間</span>
+                </div>
+                <input name="time2" min="0"  type="number" style="width:20%" class="input-border">小時
+            </div>
+        </div>
+    </div>
+   </p-panel>
+   </div>

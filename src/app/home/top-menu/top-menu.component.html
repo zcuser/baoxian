@@ -1,0 +1,20 @@
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <!-- .navbar-toggle样式用于toggle收缩的内容，即nav-collapse collapse样式所在元素 -->
+            <img class="logo" src="../../../assets/imgs/logo_white.png">
+            <div class="logotitle">壹銀人壽網路應用平臺</div>
+        </div>
+        <!-- 屏幕宽度小于768px时，div.navbar-responsive-collapse容器里的内容都会隐藏，显示icon-bar图标，当点击icon-bar图标时，再展开。屏幕大于768px时，默认显示。 -->
+        <div class="collapse navbar-collapse navbar-responsive-collapse" aria-expanded="false">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a class="adminuser">Admin, 欢迎您 &nbsp; |</a>
+                </li>
+                <li class="dropdown">
+                    <img (click)="logoutclick()" class="logoutbtn" src="../../../assets/imgs/logout.svg">
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

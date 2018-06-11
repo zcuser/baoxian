@@ -1,0 +1,23 @@
+  <div class="left-menu-container">
+    <div class="menu-title" [@container]="container">
+      <ul *ngIf="container === 'open'">
+        <li routerLinkActive='active'><a  class="left-icon-search">表單査詢</a></li>
+        <li routerLinkActive='active'><a  class="left-icon-dashboard">主頁</a></li>
+        <li routerLinkActive='active'><a  class="left-icon-todo">代辦工作任務</a></li>
+        <li routerLink="from-set" routerLinkActive='active'><a  class="left-icon-setting">表單處理設定</a></li>
+        <li routerLinkActive='active'><a  class="left-icon-alert">表單狀態査詢</a></li>
+        <li routerLink="from-list" routerLinkActive='active'><a  class="left-icon-launch">發起表單簽文</a></li>
+      </ul>
+      <ul *ngIf="container === 'close'">
+          <li pTooltip="表單査詢" routerLinkActive='active'><a  class="left-icon-search">表單査詢</a></li>
+          <li pTooltip="主頁" routerLinkActive='active'><a  class="left-icon-dashboard">主頁</a></li>
+          <li pTooltip="代辦工作任務" routerLinkActive='active'><a  class="left-icon-todo">代辦工作任務</a></li>
+          <li routerLink="from-set" pTooltip="表單處理設定" routerLinkActive='active'><a  class="left-icon-setting">表單處理設定</a></li>
+          <li pTooltip="表單狀態査詢" routerLinkActive='active'><a  class="left-icon-alert">表單狀態査詢</a></li>
+          <li routerLink="from-list" pTooltip="發起表單簽文" routerLinkActive='active'><a  class="left-icon-launch">發起表單簽文</a></li>
+        </ul>
+    </div>
+    <div (click)="trigger()" [@icon]="container" class="menu-icon">
+    <img [ngClass]="switchimg" src="../../../assets/imgs/three.svg">
+    </div>
+  </div>

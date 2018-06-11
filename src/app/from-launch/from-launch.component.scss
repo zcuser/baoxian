@@ -1,0 +1,22 @@
+.input-border:focus{
+  outline: none;
+}
+.input-group{
+  float: left;
+  padding-left: 0;
+  padding-right: 10px;
+  height: 35px;
+  line-height: 35px;
+  text-align: right;
+}
+.input-group-right{
+  margin-left: -10px;
+  margin-top: 5px;
+}
+body .ui-table-thead th{
+  width: 0%;
+    background: #F2F2F2;
+    padding: 10px 0px;
+    font-size: 1.3rem;
+    text-align: center;
+}

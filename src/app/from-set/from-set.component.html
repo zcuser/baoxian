@@ -1,0 +1,24 @@
+<top-crumb [title]='"表單處理人員設定"'></top-crumb>
+<div class="content-container">
+  <div class="panel-from">
+<p-panel header="申請人" [toggleable]="true">
+   <img src="../../assets/imgs/_提示.svg" style="width: 22px;vertical-align: bottom;"> 此關卡無需設定需求
+</p-panel>
+</div>
+<div  *ngFor="let item of titles">
+    <from-examine [title]="item['title']" [radioname]="item['name']"></from-examine>
+</div>
+</div>
+<my-footer>
+    <div class="btn-area-right">
+        <button pButton type="button" class="ui-button-warning" label="回上頁" ></button>
+        <button pButton type="button" class="ui-button-secondary" label="重新載入" ></button>
+        <button (click)="submitform()" pButton type="button" label="送出" ></button>
+    </div>
+</my-footer>
+<p-confirmDialog width="425" #cd>
+    <p-footer>
+        <button type="button" pButton icon="fa-check" label="送出" (click)="cd.accept()"></button>
+        <button type="button" class="btn-cancel" pButton icon="fa-close" label="關閉" (click)="cd.reject()"></button>
+    </p-footer>
+</p-confirmDialog>

@@ -1,0 +1,21 @@
+<div class="top-menu-container">
+<div class="menu-title">
+  <img style="width: 18px;vertical-align: sub;" src="../../../assets/imgs/menu/setting.svg">
+  {{title}}
+</div>
+<div class="menu-li">
+    <!-- <p-tabMenu [model]="items" [activeItem]="items[0]"></p-tabMenu> -->
+    <div class="ui-g-12 ui-md-6">
+        <div class="ui-inputgroup">
+            <span class="ui-inputgroup-addon requeird">表單類型</span>
+            <p-dropdown [options]="types" [style]="{'width':'150px', 'border': 'none','border-bottom': '1px solid #d2d2d2'}" placeholder="" [(ngModel)]="type"></p-dropdown>
+        </div>
+    </div>
+    <div class="ui-g-12 ui-md-6">
+        <div class="ui-inputgroup">
+            <span class="ui-inputgroup-addon requeird">表單名稱</span>
+            <p-dropdown [options]="types" [style]="{'width':'150px', 'border': 'none','border-bottom': '1px solid #d2d2d2'}" placeholder="" [(ngModel)]="type"></p-dropdown>
+        </div>
+    </div>
+</div>
+</div>

@@ -1,0 +1,355 @@
+<top-crumb [title]='"發起表單簽文"'></top-crumb>
+<div class="content-container">
+  <div class="panel-from">
+<p-panel header="表單基本諮詢" [toggleable]="true">
+<div class="ui-g ui-fluid">
+<div class="ui-g-12 ui-md-3">
+    <div class="form-group">
+        <div class="col-xs-6 input-group">表單狀態</div>
+        <div class="col-xs-6 input-group">
+            <input required minlength="8" [(ngModel)]="froms.status" type="text" class="form-control input-border"
+                placeholder="" disabled>
+        </div>
+    </div>
+</div>
+<div class="ui-g-12 ui-md-3">
+    <div class="form-group">
+        <div class="col-xs-6 input-group">表單進度</div>
+        <div class="col-xs-6 input-group">
+            <input required minlength="8" [(ngModel)]="froms.progress" type="text" class="form-control input-border"
+                placeholder="" disabled>
+        </div>
+    </div>
+  </div>
+  <div class="ui-g-12 ui-md-3">
+      <div class="form-group">
+          <div class="col-xs-6 input-group">表單類型</div>
+          <div class="col-xs-6 input-group">
+              <input required minlength="8" [(ngModel)]="froms.type" type="text" class="form-control input-border"
+                  placeholder="" disabled>
+          </div>
+      </div>
+    </div>
+    <div class="ui-g-12 ui-md-3">
+        <div class="form-group">
+            <div class="col-xs-6 input-group">表單編號</div>
+            <div class="col-xs-6 input-group">
+                <input required minlength="8" [(ngModel)]="froms.number" type="text" class="form-control input-border"
+                    placeholder="" disabled>
+            </div>
+        </div>
+      </div>
+</div>
+
+<div class="ui-g ui-fluid">
+<div class="ui-g-12 ui-md-3">
+    <div class="form-group">
+        <div class="col-xs-6 input-group"><span style="color:red">*</span>申請組織編號</div>
+        <div class="col-xs-6 input-group">
+            <input required minlength="8" [(ngModel)]="froms.unitnumber" type="text" class="form-control input-border"
+                placeholder="請輸入...">
+        </div>
+    </div>
+</div>
+<div class="ui-g-12 ui-md-3">
+    <div class="form-group">
+        <div class="col-xs-6 input-group">申請日期</div>
+        <div class="col-xs-6 input-group">
+            <input required minlength="8" [(ngModel)]="froms.date" type="text" class="form-control input-border"
+                placeholder="" disabled>
+        </div>
+    </div>
+  </div>
+  <div class="ui-g-12 ui-md-3">
+      <div class="form-group">
+          <div class="col-xs-6 input-group">申請單位</div>
+          <div class="col-xs-6 input-group">
+              <input required minlength="8" [(ngModel)]="froms.company" type="text" class="form-control input-border"
+                  placeholder="" disabled>
+          </div>
+      </div>
+    </div>
+    <div class="ui-g-12 ui-md-3">
+        <div class="form-group">
+            <div class="col-xs-6 input-group">申請人姓名</div>
+            <div class="col-xs-6 input-group">
+                <input required minlength="8" [(ngModel)]="froms.name" type="text" class="form-control input-border"
+                    placeholder="" disabled>
+            </div>
+        </div>
+      </div>
+</div>
+
+<div class="ui-g ui-fluid">
+    <div class="ui-g-12 ui-md-3">
+        <div class="form-group">
+            <div class="col-xs-6 input-group"><span style="color:red">*</span>申請人網路電話</div>
+            <div class="col-xs-6 input-group">
+                <input required minlength="8" [(ngModel)]="froms.phone" type="text" class="form-control input-border"
+                    placeholder="請輸入...">
+            </div>
+        </div>
+    </div>
+    <div class="ui-g-12 ui-md-3">
+        <div class="form-group">
+            <div class="col-xs-6 input-group">審核人單位</div>
+            <div class="col-xs-6 input-group">
+                <input required minlength="8" [(ngModel)]="froms.auditor" type="text" class="form-control input-border"
+                    placeholder="" disabled>
+            </div>
+        </div>
+      </div>
+      <div class="ui-g-12 ui-md-3">
+          <div class="form-group">
+              <div class="col-xs-6 input-group">審核人姓名</div>
+              <div class="col-xs-6 input-group">
+                  <input required minlength="8" [(ngModel)]="froms.auditorname" type="text" class="form-control input-border"
+                      placeholder="" disabled>
+              </div>
+          </div>
+        </div>
+    </div>
+</p-panel>
+</div>
+
+<div class="panel-from">
+  <p-panel header="需求項目內容" [toggleable]="true" [collapsed]="true">
+      <div class="ui-g ui-fluid" style="padding-left: 0px">
+      <div class="ui-g-12 ui-md-12">
+      <div class="form-group">
+          <div class="col-xs-2 input-group"><span style="color:red">*</span>需求項目種類</div>
+            <div class="col-xs-10 input-group-right"><span style="color:red">(至少勾選一個細項)</span></div>
+            </div>
+      </div>
+
+      <div class="ui-g-12 ui-md-12">
+      <div class="form-group">
+          <div class="col-xs-2 input-group">硬體：</div>
+          <div class="col-xs-10 input-group-right">
+              <p-checkbox name="groupname" value="val1" label="硬體新增" [(ngModel)]="selectedValues"></p-checkbox>
+              <p-checkbox name="groupname" value="val2" label="異動(硬件拔入/拔出)" [(ngModel)]="selectedValues"></p-checkbox>
+              <p-checkbox name="groupname" value="val3" label="報廢(含電腦硬碟資料廢除)" [(ngModel)]="selectedValues"></p-checkbox>
+          </div>
+      </div>
+      </div>
+
+      <div class="ui-g-12 ui-md-12">
+          <div class="form-group">
+              <div class="col-xs-2 input-group">軟體：</div>
+              <div class="col-xs-10 input-group-right">
+                  <p-checkbox name="groupname" value="val1" label="硬體新增(軟體安裝)" [(ngModel)]="selectedValues"></p-checkbox>
+                  <p-checkbox name="groupname" value="val2" label="軟體異動" [(ngModel)]="selectedValues"></p-checkbox>
+              </div>
+          </div>
+          </div>
+
+          <div class="ui-g-12 ui-md-12">
+              <div class="form-group">
+                  <div class="col-xs-2 input-group">IP/MAC：</div>
+                  <div class="col-xs-10 input-group-right">
+                      <p-checkbox name="groupname" value="val1" label="新增使用IP" [(ngModel)]="selectedValues"></p-checkbox>
+                      <p-checkbox name="groupname" value="val2" label="使用中IP異動" [(ngModel)]="selectedValues"></p-checkbox>
+                      <p-checkbox name="groupname" value="val2" label="使用中IP註銷" [(ngModel)]="selectedValues"></p-checkbox>
+                  </div>
+              </div>
+              </div>
+
+              <div class="ui-g-12 ui-md-12">
+                  <div class="form-group">
+                      <div class="col-xs-2 input-group"><span style="color:red">*</span>需求簡述：</div>
+                      <div class="col-xs-10 input-group-right">
+                          <textarea style="width: 400px;height: 100px"></textarea>
+                      </div>
+                  </div>
+                  </div>
+</div>
+  </p-panel>
+</div>
+<div class="panel-from">
+    <p-panel header="硬體需求申請表" [toggleable]="true" [collapsed]="true">
+        <div class="ui-g ui-fluid" style="padding-left: 0px">
+        <div class="ui-g-12 ui-md-12">
+            1.如為報廢設備資料抹除需求,需求單位須保留完工確認之申請單列印本，作為申請年度器具報廢時之佐證資料
+        </div>
+
+        <div class="ui-g-12 ui-md-12">
+          <p-table [value]="dataList">
+              <ng-template pTemplate="header">
+                  <tr>
+                      <th>項目說明</th>
+                      <th>類別</th>
+                      <th>購置日期</th>
+                      <th>器具編號</th>
+                      <th>序號</th>
+                      <th>原使用者及單位名稱（新增免填）</th>
+                      <th>新使用者及單位名稱（報廢免填/庫存填諮詢室）</th>
+                      <th>原使用單位資料已清除</th>
+                      <th>操作</th>
+                  </tr>
+              </ng-template>
+              <ng-template pTemplate="body" let-data>
+                  <tr>
+                      <td pEditableColumn>
+                          <p-cellEditor>
+                              <ng-template pTemplate="input">
+                                  <input style="width: 30%;margin:0 auto" class="form-control input-border" type="text" [(ngModel)]="data.detail">
+                              </ng-template>
+                              <ng-template pTemplate="output">
+                                  {{data.detail}}
+                              </ng-template>
+                          </p-cellEditor>
+                      </td>
+                      <td pEditableColumn>
+                          <p-cellEditor>
+                              <ng-template pTemplate="input">
+                                  <input style="width: 30%;margin:0 auto" class="form-control input-border" type="text" [(ngModel)]="data.type">
+                              </ng-template>
+                              <ng-template pTemplate="output">
+                                  {{data.type}}
+                              </ng-template>
+                          </p-cellEditor>
+                      </td>
+                      <td pEditableColumn>
+                        <p-cellEditor>
+                            <ng-template pTemplate="input">
+                                <input style="width: 50%;margin:0 auto" class="form-control input-border" type="text" [(ngModel)]="data.date">
+                            </ng-template>
+                            <ng-template pTemplate="output">
+                                {{data.date}}
+                            </ng-template>
+                        </p-cellEditor>
+                    </td>
+                    <td pEditableColumn>
+                      <p-cellEditor>
+                          <ng-template pTemplate="input">
+                              <input style="width: 50%;margin:0 auto" class="form-control input-border" type="text" [(ngModel)]="data.devicenum">
+                          </ng-template>
+                          <ng-template pTemplate="output">
+                              {{data.devicenum}}
+                          </ng-template>
+                      </p-cellEditor>
+                  </td>
+                  <td pEditableColumn>
+                    <p-cellEditor>
+                        <ng-template pTemplate="input">
+                            <input style="width: 50%;margin:0 auto" class="form-control input-border" type="text" [(ngModel)]="data.num">
+                        </ng-template>
+                        <ng-template pTemplate="output">
+                            {{data.num}}
+                        </ng-template>
+                    </p-cellEditor>
+                </td>
+                <td pEditableColumn>
+                  <p-cellEditor>
+                      <ng-template pTemplate="input">
+                          <input style="width: 50%;margin:0 auto" class="form-control input-border" type="text" [(ngModel)]="data.oldusercompany">
+                      </ng-template>
+                      <ng-template pTemplate="output">
+                          {{data.oldusercompany}}
+                      </ng-template>
+                  </p-cellEditor>
+              </td>
+              <td pEditableColumn>
+                <p-cellEditor>
+                    <ng-template pTemplate="input">
+                        <input style="width: 50%;margin:0 auto" class="form-control input-border" type="text" [(ngModel)]="data.newusercompany">
+                    </ng-template>
+                    <ng-template pTemplate="output">
+                        {{data.newusercompany}}
+                    </ng-template>
+                </p-cellEditor>
+            </td>
+            <td pEditableColumn>
+              <p-cellEditor>
+                  <ng-template pTemplate="input">
+                      <input style="width: 30%;margin:0 auto" class="form-control input-border" type="text" [(ngModel)]="data.usercompanyisclear">
+                  </ng-template>
+                  <ng-template pTemplate="output">
+                      {{data.usercompanyisclear}}
+                  </ng-template>
+              </p-cellEditor>
+          </td>
+                      <td>
+                        <img (click)="delete(data)" class="point" src="../../../assets/imgs/closed.svg">
+                      </td>
+                  </tr>
+              </ng-template>
+          </p-table>
+      </div>
+
+      <div class="ui-g-12 ui-md-12">
+        <div class="ui-inputgroup" style="float: right">
+            <button (click)="addname()" pButton type="button" label="添加初審人" ></button>
+        </div>
+    </div>
+        </div>
+      </p-panel>
+      </div>
+
+      <div class="panel-from">
+          <p-panel header="需求申請須知及備註事項" [toggleable]="true" [collapsed]="true">
+              <div class="ui-g ui-fluid" style="padding-left: 0px">
+                  <div class="ui-g-12 ui-md-12" style="border-bottom: 1px solid #d2d2d2;">
+                     <p> 1.請確認表單機位有完整填寫，有標識<span style="color:red">&nbsp;*&nbsp;</span>處即代表有必要資料仍未完整填寫</p>
+                     <p> 2.需求申請單成功送出後，系統將自動寄送成功送出申請通知至您的公司信箱中，若未收到該郵件請洽諮詢室服務科</p>
+                     <p> 3.需求申請單送出後將先各申請單位主管進行審核，審核狀態系統將自動以電子郵件進行通知，請注意您的公司信箱將接收到審核結果通知</p>
+                     <p> 4.在申請單位主管尚未審核通過前，您仍可進行需求申請的取消；但申請單位主管審核過後，您將無法自行進行需求申請的取消，請特別注意</p>
+                  </div>
+                  <div class="ui-g-12 ui-md-12">
+                      申請人提醒備註事項<span style="color:red">(由申請人填寫，此資訊將提供各審核人及承辦人進行参考)</span>
+                  </div>
+                  <div class="ui-g-12 ui-md-12">
+                      <div class="form-group">
+                          <div class="col-xs-1 input-group"></div>
+                          <div class="col-xs-11 input-group-right">
+                              <textarea style="width: 400px;height: 100px"></textarea>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+          </p-panel>
+          </div>
+
+          <div class="panel-from">
+              <p-panel header="動態加簽(請選擇設定欲新增會簽的人員)" [toggleable]="true" [collapsed]="true">
+               <div class="ui-g ui-fluid" style="padding-left: 0px;border-bottom: 1px solid #d2d2d2;">
+                  <p-radioButton name="groupname" value="val1" label="加簽其他部門流程" [(ngModel)]="selectedValues"></p-radioButton>
+                  <p-radioButton name="groupname" value="val2" label="加簽其他指定成員" [(ngModel)]="selectedValues"></p-radioButton>
+                </div>
+                <div class="ui-g ui-fluid">
+                <div class="ui-g-12 ui-md-12">
+                    <div class="ui-inputgroup">
+                        <div class="col-xs-2 input-group">部門簽核流程名稱</div>
+                        <div class="col-xs-10 input-group-right">
+                            <p-dropdown [options]="conpannys" [style]="{'width':'200px', 'border': 'none','border-bottom': '1px solid #d2d2d2'}" placeholder="" [(ngModel)]="conpanny"></p-dropdown>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="ui-g-12 ui-md-12">
+                    <div class="ui-inputgroup">
+                        <div class="col-xs-2 input-group">加簽原因說明</div>
+                        <div class="col-xs-10 input-group-right">
+                            <textarea style="width: 400px;height: 100px" placeholder="請協助確認需求申請單內容是否正確，並且原硬體設備中資料已清除"></textarea>
+                        </div>
+
+                    </div>
+                </div>
+              </div>
+                </p-panel>
+                </div>
+</div>
+<!-- <my-footer>
+    <div class="btn-area-right">
+        <button pButton type="button" class="ui-button-warning" label="回上頁" ></button>
+        <button pButton type="button" class="ui-button-secondary" label="重新載入" ></button>
+        <button (click)="submitform()" pButton type="button" label="送出" ></button>
+    </div>
+</my-footer>
+<p-confirmDialog width="425" #cd>
+    <p-footer>
+        <button type="button" pButton icon="fa-check" label="送出" (click)="cd.accept()"></button>
+        <button type="button" class="btn-cancel" pButton icon="fa-close" label="關閉" (click)="cd.reject()"></button>
+    </p-footer>
+</p-confirmDialog> -->
+
